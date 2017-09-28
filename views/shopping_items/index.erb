@@ -4,8 +4,14 @@
 
 	<h2>Shopping Item Title: <%= item[:title] %></h2>
 
-	<a href="/shopping_items/<%= index %>"<%= item[:body] %>></a>
+	<a href="/shopping_items/<%= index %>"> <p><%= item[:body] %></p></a>
+	<a href="/shopping_items/<%= index %>/edit">Edit</a>
 
+
+	<form action="/shopping_items/<%= index %>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete">
+	</form>
 
 <% end %>
 
