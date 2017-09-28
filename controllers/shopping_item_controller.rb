@@ -47,5 +47,18 @@ class ShoppingItemsController < Sinatra::Base
 	end
 
 
+	#Show
+	get "/shopping_items/:id" do
+		id = params[:id].to_i
+		@shopping_item = $shopping_items[id]
+		erb :"shopping_items/show"
+	end
+
+
+
+
+
+
+
 
 end
