@@ -64,6 +64,15 @@ class ShoppingItemsController < Sinatra::Base
 	end
 
 
+	#Update
+	put "/shopping_items/:id" do
+		id = params[:id].to_i
+		$shopping_items[id][:title] = params[:title]
+		$shopping_items[id][:body] = params[:body]
+		redirect "/shopping_items/#{id}"
+	end
+
+
 
 
 
