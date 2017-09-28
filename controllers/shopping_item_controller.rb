@@ -73,7 +73,12 @@ class ShoppingItemsController < Sinatra::Base
 	end
 
 
-
+	#Delete
+	delete "shopping_items/:id" do
+		id = params[:id].to_i
+		$shopping_items.delete_at(id)
+		redirect "/shopping_items"
+	end
 
 
 
