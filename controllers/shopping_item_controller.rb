@@ -14,14 +14,20 @@ class ShoppingItemsController < Sinatra::Base
 		body: "This is the first shopping item"
 	},
 	{
-		title: "Item 2"
+		title: "Item 2",
 		body: "This is the second shopping item"
 	},
 	{
-		title: "Item 3"
+		title: "Item 3",
 		body: "This is the third shopping item"
 	}]
 
+	#Index
+	get "/shopping_items" do
+		@page_header = "All shopping items"
+		@shopping_items = $shopping_items
+		erb :"shopping_items/index"
+	end
 
 
 
