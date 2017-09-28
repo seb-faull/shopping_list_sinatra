@@ -55,6 +55,13 @@ class ShoppingItemsController < Sinatra::Base
 	end
 
 
+	#Edit
+	get "/shopping_items/:id/edit" do
+		@id = params[:id].to_i
+		@shopping_item = $shopping_items[@id]
+
+		erb :"shopping_items/edit"
+	end
 
 
 
