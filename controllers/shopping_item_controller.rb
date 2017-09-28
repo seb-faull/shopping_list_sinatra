@@ -29,12 +29,22 @@ class ShoppingItemsController < Sinatra::Base
 		erb :"shopping_items/index"
 	end
 
+
 	#New
 	get "/shopping_items/new" do
 		erb :"shopping_items/new"
 	end
 
 
+	#Create
+	post "/shopping_items" do
+		new_shopping_item = {
+			title: params[:title],
+			body: params[:body]
+		}
+		$shopping_items << new_shopping_item
+		redirect "/shopping_items"
+	end
 
 
 
